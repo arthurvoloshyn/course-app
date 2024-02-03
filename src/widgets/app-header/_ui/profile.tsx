@@ -62,7 +62,7 @@ export function Profile() {
             onClick={() => signOut()}
           >
             <LogOut className="mr-2 h-4 w-4" />
-            <span>Выход</span>
+            <span>Logout</span>
           </DropdownMenuItem>
         </DropdownMenuGroup>
       </DropdownMenuContent>
