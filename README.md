@@ -1,5 +1,18 @@
 # course-app
 
+## To clone
+
+- You'll need to have [git](https://git-scm.com/), [node v18.11+](https://nodejs.org/en/) and [docker](https://www.docker.com/) installed in
+  your system.
+
+`git clone https://github.com/ArturW1998/course-app.git`
+
+## Run the project
+
+- Copy `.env.example` as `.env`
+- Replace the values of the environment variables with your own in the `.env` file
+- Run the Docker services using the `docker compose up` command
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
