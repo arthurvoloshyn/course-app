@@ -22,9 +22,5 @@ export function selectFile(contentType: string, multiple?: boolean) {
 
 export function validateFileSize(file: File, sizeMb: number) {
   const fileSize = file.size / 1024 / 1024; // in MiB
-  if (fileSize > sizeMb) {
-    return false;
-  } else {
-    return true;
-  }
+  return fileSize <= sizeMb;
 }

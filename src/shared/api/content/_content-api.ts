@@ -1,5 +1,5 @@
 import { join } from "path";
-import { CacheStategy } from "./_lib/cache-strategy";
+import { CacheStrategy } from "./_lib/cache-strategy";
 import { ContentParser } from "./_lib/content-parser";
 import { FileFetcher } from "./_lib/file-fetcher";
 import manifestSchema from "./_schemas/manifest.schema.json";
@@ -12,7 +12,7 @@ import { loggedMethod } from "@/shared/lib/logger";
 import { pick } from "lodash-es";
 
 interface Deps {
-  cacheStrategy: CacheStategy;
+  cacheStrategy: CacheStrategy;
   contentParser: ContentParser;
   fileFetcher: FileFetcher;
 }

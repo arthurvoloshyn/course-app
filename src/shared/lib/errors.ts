@@ -1,5 +1,5 @@
-export class AuthorizatoinError extends Error {
-  constructor(message = "AuthorizatoinError") {
+export class AuthorizationError extends Error {
+  constructor(message = "AuthorizationError") {
     super(message);
   }
 }
