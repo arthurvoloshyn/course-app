@@ -55,7 +55,7 @@ export function TestEmailSignInForm({ testToken }: { testToken: string }) {
                 aria-label="Вход"
               />
             )}
-            Войти через Email
+            Sign in via Email
           </Button>
           {emailSignIn.isSuccess && (
             <a
@@ -66,7 +66,7 @@ export function TestEmailSignInForm({ testToken }: { testToken: string }) {
                 email: form.getValues("email"),
               })}
             >
-              Упрощённый тестовый вход
+              Simplified test login
             </a>
           )}
         </div>

@@ -42,7 +42,7 @@ const getDefaultValues = (profile: Profile) => ({
 
 export function ProfileForm({
   onSuccess,
-  submitText = "Сохранить",
+  submitText = "Save",
   profile,
   userId,
 }: {
@@ -90,7 +90,7 @@ export function ProfileForm({
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Имя пользователя</FormLabel>
+              <FormLabel>User Name</FormLabel>
               <FormControl>
                 <Input placeholder="" {...field} />
               </FormControl>
@@ -116,7 +116,7 @@ export function ProfileForm({
           {updateProfile.isPending && (
             <Spinner
               className="mr-2 h-4 w-4 animate-spin"
-              aria-label="Обновление профиля"
+              aria-label="Profile update"
             />
           )}
           {submitText}

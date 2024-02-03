@@ -7,9 +7,9 @@ setup.describe("auth", () => {
   setup("authenticate as admin", async ({ page }) => {
     await page.goto("/auth/sign-in?callbackUrl=/");
     await page.getByLabel("Email").fill(ADMIN.email);
-    await page.getByRole("button", { name: "Войти через Email" }).click();
+    await page.getByRole("button", { name: "Sign in via Email" }).click();
 
-    await page.getByRole("link", { name: "Упрощённый тестовый вход" }).click();
+    await page.getByRole("link", { name: "Simplified test login" }).click();
     await page.waitForURL("/");
     await expect(page.getByRole("button", { name: "AD" })).toBeVisible();
 
@@ -19,9 +19,9 @@ setup.describe("auth", () => {
   setup("authenticate as user", async ({ page }) => {
     await page.goto("/auth/sign-in?callbackUrl=/");
     await page.getByLabel("Email").fill(USER.email);
-    await page.getByRole("button", { name: "Войти через Email" }).click();
+    await page.getByRole("button", { name: "Sign in via Email" }).click();
     // To handle verification emails
-    await page.getByRole("link", { name: "Упрощённый тестовый вход" }).click();
+    await page.getByRole("link", { name: "Simplified test login" }).click();
     await page.waitForURL("/");
     await expect(page.getByRole("button", { name: "US" })).toBeVisible();
 

@@ -19,7 +19,7 @@ export default async function NewUserPage({
       <div>
         <h3 className="text-lg font-medium">Последний шаг</h3>
         <p className="text-sm text-muted-foreground">
-          Обновите профиль, это как другие пользователи увидят вас на сайте
+            Update your profile, this is how other users will see you on the site
         </p>
       </div>
       <Separator />

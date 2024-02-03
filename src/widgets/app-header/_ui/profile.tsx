@@ -43,7 +43,7 @@ export function Profile() {
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56 mr-2 ">
         <DropdownMenuLabel>
-          <p>Мой аккаунт</p>
+          <p>My account</p>
           <p className="text-xs text-muted-foreground overflow-hidden text-ellipsis">
             {user ? getProfileDisplayName(user) : undefined}
           </p>
@@ -54,7 +54,7 @@ export function Profile() {
           <DropdownMenuItem asChild>
             <Link href={`/profile/${user?.id}`}>
               <User className="mr-2 h-4 w-4" />
-              <span>Профиль</span>
+              <span>Profile</span>
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem

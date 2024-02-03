@@ -29,7 +29,7 @@ export function UpdateProfileForm({
   }
 
   if (!profileQuery.data) {
-    return <div>Не удалось загрузить профиль, возможно у вас нет прав</div>;
+    return <div>Failed to upload profile, you may not have permissions</div>;
   }
 
   return (
@@ -37,7 +37,7 @@ export function UpdateProfileForm({
       userId={userId}
       profile={profileQuery.data.profile}
       onSuccess={handleSuccess}
-      submitText={callbackUrl ? "Продолжить" : "Сохранить"}
+      submitText={callbackUrl ? "Продолжить" : "Save"}
     />
   );
 }
