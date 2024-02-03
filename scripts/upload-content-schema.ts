@@ -2,14 +2,14 @@ import { compileFromFile } from "json-schema-to-typescript";
 import { promises as fsPromises } from "fs";
 import * as path from "path";
 
-// Функция для скачивания и сохранения файла
+// Function for downloading and saving a file
 async function downloadFile(url: string, outputPath: string): Promise<void> {
   const response = await fetch(url);
   const data = await response.text();
   await fsPromises.writeFile(outputPath, data);
 }
 
-// Функция для генерации TypeScript типов из JSON схемы
+// Function for generating TypeScript types from JSON schema
 async function generateTypes(
   schemaPath: string,
   outputPath: string,
@@ -18,7 +18,7 @@ async function generateTypes(
   await fsPromises.writeFile(outputPath, ts);
 }
 
-// Основная функция
+// Main function
 async function downloadAndGenerateTypes(
   schemaDir: string,
   outputDir: string,
@@ -33,10 +33,10 @@ async function downloadAndGenerateTypes(
     const schemaPath = path.join(schemaDir, file);
     const outputPath = path.join(outputDir, file);
 
-    // Скачивание файла
+    // File download
     await downloadFile(schemaPath, outputPath);
 
-    // Генерация TypeScript типов
+    // Generating TypeScript types
     const typesOutputPath = path.join(
       outputDir,
       file.replace(".json", ".d.ts"),
@@ -45,16 +45,16 @@ async function downloadAndGenerateTypes(
   }
 }
 
-// Чтение аргументов командной строки
+// Reading command line arguments
 const [schemaDir, outputDir] = process.argv.slice(2);
 
 if (!schemaDir || !outputDir) {
   console.error(
-    "Необходимо указать оба пути: путь к схемам и путь для выходных файлов",
+    "Both paths must be specified: the path to the schematics and the path to the output files",
   );
   process.exit(1);
 }
 
 downloadAndGenerateTypes(schemaDir, outputDir)
-  .then(() => console.log("Схемы скачаны и типы сгенерированы!"))
-  .catch((error) => console.error("Произошла ошибка:", error));
+  .then(() => console.log("Schematics downloaded and types generated!!"))
+  .catch((error) => console.error("There's been an error:", error));
