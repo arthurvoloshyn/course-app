@@ -4,8 +4,8 @@ const nextConfig = {
     serverActions: {
       allowedOrigins: [
         "localhost:3000",
-        "staging.micro-courses.ru",
-        "micro-courses.ru",
+        "staging.course-app.com",
+        "course-app.com",
       ],
     },
   },
@@ -31,8 +31,8 @@ module.exports = withSentryConfig(
 
     // Suppresses source map uploading logs during build
     silent: true,
-    org: "micro-courses",
-    project: "micro-courses-core",
+    org: "course-app",
+    project: "course-app-core",
     dryRun: process.env.NODE_ENV === "development",
   },
   {
