@@ -10,25 +10,25 @@ export default function AuthenticationPage() {
         <Card className="max-w-[350px] mx-auto">
           <CardHeader className="flex flex-col space-y-2 text-center">
             <h1 className="text-2xl font-semibold tracking-tight">
-              Войти в аккаунт
+              Sign in to your account
             </h1>
           </CardHeader>
           <CardContent className="grid gap-4">
             <SignInForm />
             <p className="px-0 text-center text-sm text-muted-foreground">
-              Нажимая продолжить вы соглашаетесь с{" "}
+              By clicking continue, you agree to{" "}
               <Link
                 href="/terms"
                 className="underline underline-offset-4 hover:text-primary"
               >
-                Пользовательским соглашением
+                the User Agreement
               </Link>{" "}
-              и{" "}
+              and{" "}
               <Link
                 href="/privacy"
                 className="underline underline-offset-4 hover:text-primary"
               >
-                Политикой конфиденциальности
+                Privacy Policy
               </Link>
               .
             </p>

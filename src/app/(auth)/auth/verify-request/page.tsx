@@ -6,12 +6,12 @@ export default function VerifyRequestPage() {
       <Card className="max-w-[350px] mx-auto">
         <CardHeader className="flex flex-col space-y-2 text-center">
           <h1 className="text-2xl font-semibold tracking-tight">
-            Проверьте свою электронную почту
+            Check your email
           </h1>
         </CardHeader>
         <CardContent className="grid gap-4">
           <p className="px-0 text-center text-sm text-muted-foreground">
-            Ссылка для входа была отправлена на ваш адрес электронной почты.
+            A login link has been sent to your email address.
           </p>
         </CardContent>
       </Card>

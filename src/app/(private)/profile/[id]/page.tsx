@@ -7,7 +7,7 @@ export default function ProfilePage({ params }: { params: { id: string } }) {
       <div>
         <h3 className="text-lg font-medium">Profile</h3>
         <p className="text-sm text-muted-foreground">
-          Это как другие пользователи видят вас на сайте
+            This is how other users see you on the site.
         </p>
       </div>
       <Separator />
