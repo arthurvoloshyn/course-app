@@ -1,5 +1,5 @@
 import { compileMDX } from "@/shared/lib/mdx/server";
-import { coursesRepository } from "../../entities/course/_repositories/course";
+import { coursesRepository } from "@/entities/course/_repositories/course";
 import { CourseItem } from "./_ui/course-item";
 
 export async function CoursesList() {

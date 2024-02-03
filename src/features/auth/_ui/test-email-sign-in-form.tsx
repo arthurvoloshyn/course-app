@@ -52,7 +52,7 @@ export function TestEmailSignInForm({ testToken }: { testToken: string }) {
             {emailSignIn.isPending && (
               <Spinner
                 className="mr-2 h-4 w-4 animate-spin"
-                aria-label="Вход"
+                aria-label="Login"
               />
             )}
             Sign in via Email

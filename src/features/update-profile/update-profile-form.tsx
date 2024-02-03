@@ -25,7 +25,7 @@ export function UpdateProfileForm({
   };
 
   if (profileQuery.isPending) {
-    return <Spinner aria-label="Загрузка профиля" />;
+    return <Spinner aria-label="Profile Loading" />;
   }
 
   if (!profileQuery.data) {
@@ -37,7 +37,7 @@ export function UpdateProfileForm({
       userId={userId}
       profile={profileQuery.data.profile}
       onSuccess={handleSuccess}
-      submitText={callbackUrl ? "Продолжить" : "Save"}
+      submitText={callbackUrl ? "Continue" : "Save"}
     />
   );
 }

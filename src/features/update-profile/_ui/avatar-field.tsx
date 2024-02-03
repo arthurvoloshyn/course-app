@@ -1,6 +1,4 @@
 import { Button } from "@/shared/ui/button";
-import { useMutation } from "@tanstack/react-query";
-//import { selectFile } from "@/shared/lib/file";
 import { Spinner } from "@/shared/ui/spinner";
 import { ProfileAvatar } from "@/entities/user/profile";
 import { useUploadAvatar } from "../_vm/use-upload-avatar";
@@ -25,7 +23,7 @@ export function AvatarField({
     >
       {isPending && (
         <div className="inset-0 absolute flex items-center justify-center z-10">
-          <Spinner className="w-10 h-10" aria-label="Загрузка новой аватарки" />
+          <Spinner className="w-10 h-10" aria-label="Uploading a new avatar" />
         </div>
       )}
       <ProfileAvatar
