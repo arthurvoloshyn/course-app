@@ -3,7 +3,7 @@ import { getProfileLetters } from "./get-profile-letters";
 describe("get profile letters", () => {
   test("should split by .", () => {
     const res = getProfileLetters({
-      email: "evgeny.paromov@gmail.com",
+      email: "arthurvoloshyn@gmail.com",
     });
 
     expect(res).toEqual("EP");
@@ -11,8 +11,8 @@ describe("get profile letters", () => {
 
   test("should split by -", () => {
     const res = getProfileLetters({
-      email: "avgeny.paromov@gmail.com",
-      name: "Evgeny-Paromov",
+      email: "arthurvoloshyn@gmail.com",
+      name: "Artur-Voloshyn",
     });
 
     expect(res).toEqual("EP");
@@ -20,8 +20,8 @@ describe("get profile letters", () => {
 
   test("should split by _", () => {
     const res = getProfileLetters({
-      email: "avgeny.paromov@gmail.com",
-      name: "Evgeny_Paromov",
+      email: "arthurvoloshyn@gmail.com",
+      name: "Artur_Voloshyn",
     });
 
     expect(res).toEqual("EP");
@@ -29,8 +29,8 @@ describe("get profile letters", () => {
 
   test("should split by space", () => {
     const res = getProfileLetters({
-      email: "evgeny.paromov@gmail.com",
-      name: "Evgeny Paromov",
+      email: "arthurvoloshyn@gmail.com",
+      name: "Artur Voloshyn",
     });
 
     expect(res).toEqual("EP");
@@ -38,8 +38,8 @@ describe("get profile letters", () => {
 
   test("should return first 2 letters if no separator", () => {
     const res = getProfileLetters({
-      email: "evgeny.paromov@gmail.com",
-      name: "EvgenyParomov",
+      email: "arthurvoloshyn@gmail.com",
+      name: "ArturVoloshyn",
     });
 
     expect(res).toEqual("EV");
