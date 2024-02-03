@@ -1,6 +1,6 @@
 import { Profile, SessionEntity, UserId } from "../_domain/types";
 import { createProfileAbility } from "../_domain/ability";
-import { AuthorizatoinError } from "@/shared/lib/errors";
+import { AuthorizationError } from "@/shared/lib/errors";
 import { profileRepository } from "../_repositories/profile";
 
 type UpdateProfile = {
@@ -14,7 +14,7 @@ export class UpdateProfileUseCase {
     const profileAbility = createProfileAbility(session);
 
     if (!profileAbility.canUpdateProfile(userId)) {
-      throw new AuthorizatoinError();
+      throw new AuthorizationError();
     }
 
     return await profileRepository.update(userId, data);

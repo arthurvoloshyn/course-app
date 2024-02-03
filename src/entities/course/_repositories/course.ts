@@ -17,21 +17,21 @@ class CoursesRepository {
       };
     };
 
-    const setteldCourses = await Promise.allSettled(
+    const settledCourses = await Promise.allSettled(
       manifest.courses.map(fetchCourse),
     );
 
-    setteldCourses.forEach((value, i) => {
+    settledCourses.forEach((value, i) => {
       if (value.status === "rejected") {
         logger.error({
           msg: "Course by slug not found",
           slug: manifest.courses[i],
-          erorr: value.reason,
+          error: value.reason,
         });
       }
     });
 
-    return setteldCourses
+    return settledCourses
       .filter(
         (courseResult): courseResult is PromiseFulfilledResult<CourseEntity> =>
           courseResult.status === "fulfilled",
