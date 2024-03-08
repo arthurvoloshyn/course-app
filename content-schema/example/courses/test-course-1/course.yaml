@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=https://raw.githubusercontent.com/ArturW1998/course-app/main/content-schema/schemas/course.schema.json
+# yaml-language-server: $schema=../../../schemas/course.schema.json
 
 id: "{cuid}"
 thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png"
