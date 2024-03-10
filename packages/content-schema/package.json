@@ -7,10 +7,10 @@
     "example": "example"
   },
   "scripts": {
-    "gen:types": "ts-node ./scripts/generate-schema-types.ts ./schemas",
-    "replace-cuid:playgound": "ts-node ./scripts/replace-cuid.ts ./playgound",
-    "replace-cuid": "ts-node ./scripts/replace-cuid.ts",
-    "validate": "ts-node ./scripts/validate.ts",
+    "gen:types": "ts-node scripts/generate-schema-types.ts ./schemas",
+    "replace-cuid:playgound": "ts-node scripts/replace-cuid.ts ./playgound",
+    "replace-cuid": "ts-node scripts/replace-cuid.ts",
+    "validate": "ts-node scripts/validate.ts",
     "dev": "concurrently -P --kill-others \"npm:replace-cuid -- {@}\" \"npm:validate -- {@}\" --",
     "dev:staging": "npm run dev -- ../staging-content/",
     "dev:prod": "npm run dev -- ../prod-content/"
