@@ -81,4 +81,4 @@ export const createPublicServerApi = <T extends AnyRouter>(router: T) =>
   createServerSideHelpers<T>({
     router: router,
     ctx: () => ({}),
-  } as any);
+  } as any); // The signature is correct, the type problem is due to a peculiarity of tRPC typing.
