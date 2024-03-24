@@ -4,15 +4,15 @@ import {
   router,
 } from "@/kernel/lib/trpc/server";
 import { compileMDX } from "@/shared/lib/mdx/server";
-import { getCoursesListService } from "@/entities/course/course.server";
+import { getCourseListService } from "@/entities/course/course.server";
 
-export const coursesListController = router({
+export const courseListController = router({
   courseList: router({
     get: publicProcedure.query(async () => {
-      const coursesList = await getCoursesListService.exec();
+      const courseList = await getCourseListService.exec();
 
       const compiledCourses = await Promise.all(
-        coursesList.map(async (course) => ({
+        courseList.map(async (course) => ({
           ...course,
           description: await compileMDX(course.description).then((r) => r.code),
         })),
@@ -23,8 +23,6 @@ export const coursesListController = router({
   }),
 });
 
-export type CoursesListController = typeof coursesListController;
+export type CourseListController = typeof courseListController;
 
-export const coursesListServerApi = createPublicServerApi(
-  coursesListController,
-);
+export const courseListServerApi = createPublicServerApi(courseListController);
