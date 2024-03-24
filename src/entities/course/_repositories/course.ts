@@ -2,8 +2,10 @@ import { cache } from "react";
 import { CourseEntity } from "../_domain/types";
 import { contentApi } from "@/shared/api/content";
 import { logger } from "@/shared/lib/logger";
+import { injectable } from "inversify";
 
-class CoursesRepository {
+@injectable()
+export class CoursesRepository {
   getCourseList = cache(async (): Promise<CourseEntity[]> => {
     const manifest = await contentApi.fetchManifest();
 
@@ -42,5 +44,3 @@ class CoursesRepository {
       });
   });
 }
-
-export const coursesRepository = new CoursesRepository();
