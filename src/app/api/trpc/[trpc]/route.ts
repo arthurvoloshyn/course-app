@@ -1,13 +1,19 @@
 import "reflect-metadata";
 
-import { CourseListController } from "@/features/course-list/sever";
-import { createContext, sharedRouter, t } from "@/kernel/lib/trpc/server";
+import {
+  Controller,
+  createContext,
+  sharedRouter,
+  t,
+} from "@/kernel/lib/trpc/server";
 import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
 import { init } from "@/app/_init";
 
 const container = init();
 
-const routers = [container.get(CourseListController).router];
+const routers = container
+  .getAll(Controller)
+  .map((controller) => controller.router);
 
 const handler = (req: Request) =>
   fetchRequestHandler({
