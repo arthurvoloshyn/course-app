@@ -107,7 +107,7 @@ export function ProfileForm({
           disabled
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Аватарка</FormLabel>
+              <FormLabel>Avatar</FormLabel>
               <FormControl>
                 <AvatarField
                   value={field.value}
